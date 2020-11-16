@@ -10,7 +10,7 @@ function WelcomeScreen(props) {
       {/* <Text>Get Out There</Text> */}
     </View>
     <View style={styles.loginButton}>
-      <Text>Login</Text>
+      {/* <Text>Login</Text> */}
     </View>
     <View style={styles.registerButton}></View>
     </ImageBackground>
