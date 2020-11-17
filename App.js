@@ -12,7 +12,7 @@ export default function App() {
   return (
     <View style={styles.mainContainer}>
       <AppText>I Love React Native!</AppText>
-      <AppButton title="login" />
+      <AppButton title="Login"> </AppButton>
       {/* <View style={styles.whatever}></View> */}
     </View>
     // <WelcomeScreen></WelcomeScreen>

@@ -1,12 +1,12 @@
-import React from './react';
+import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 
 import colors from '../config/colors'
 
-function AppButton({title}){
+function AppButton(props){ //can just use { title } to destructure the props object
   return (
     <View style={styles.button}>
-      <Text style={styles.text}>{title}</Text>
+      <Text style={styles.text}>{props.title}</Text>
     </View>
   );
 }
