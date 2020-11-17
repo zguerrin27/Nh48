@@ -5,10 +5,15 @@ import { StyleSheet, View } from 'react-native';
 import WelcomeScreen from './app/screens/WelcomeScreen';
 import ViewImageScreen from './app/screens/ViewImageScreen';
 
+import AppText from './app/components/AppText'
+import AppButton from './app/components/AppButton'
+
 export default function App() {
   return (
     <View style={styles.mainContainer}>
-      <View style={styles.whatever}></View>
+      <AppText>I Love React Native!</AppText>
+      <AppButton title="login" />
+      {/* <View style={styles.whatever}></View> */}
     </View>
     // <WelcomeScreen></WelcomeScreen>
     //<ViewImageScreen></ViewImageScreen>
