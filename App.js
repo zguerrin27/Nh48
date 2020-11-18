@@ -10,12 +10,7 @@ import AppButton from './app/components/AppButton'
 
 export default function App() {
   return (
-    <View style={styles.mainContainer}>
-      <AppText>I Love React Native!</AppText>
-      <AppButton title="Login"> </AppButton>
-      {/* <View style={styles.whatever}></View> */}
-    </View>
-    // <WelcomeScreen></WelcomeScreen>
+    <WelcomeScreen></WelcomeScreen>
     //<ViewImageScreen></ViewImageScreen>
   );
 }
@@ -26,9 +21,4 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center"
   },
-  whatever: {
-    backgroundColor: "dodgerblue",
-    width: 100,
-    height: 100
-  }
 })
