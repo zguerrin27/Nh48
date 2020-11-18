@@ -8,18 +8,13 @@ import ViewImageScreen from './app/screens/ViewImageScreen';
 import AppText from './app/components/AppText'
 import AppButton from './app/components/AppButton'
 import Card from './app/components/Card'
+import MountainDetailsScreen from './app/screens/MountainDetailsScreen';
 
 export default function App() {
   return (
     // <WelcomeScreen></WelcomeScreen>
     //<ViewImageScreen></ViewImageScreen>
-    <View style={styles.card}>
-      <Card
-        title="Mt Washington"
-        subTitle="6288'"
-        image={require("./app/assets/MtWashington.jpg")}
-      />
-    </View>
+    <MountainDetailsScreen />
   );
 }
 
