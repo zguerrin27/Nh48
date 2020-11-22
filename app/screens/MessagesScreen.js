@@ -4,6 +4,7 @@ import { FlatList, StyleSheet, View } from 'react-native';
 import ListItem from '../components/ListItem';
 import Screen from '../components/Screen';
 import ListItemSeparator from '../components/ListItemSeparator';
+import ListItemDeleteAction from '../components/ListItemDeleteAction';
 
 const messages = [
   {
@@ -30,7 +31,9 @@ function MessagesScreen(props) {
           <ListItem
             title={item.title}
             subTitle={item.description}
-            image={item.image} 
+            image={item.image}
+            onPress={() => console.log("Message Selected", item)}
+            renderRightActions={ListItemDeleteAction}
           />
         )}
         ItemSeparatorComponent={ListItemSeparator} //takes the FUNCTIONAL component // not a class component 
