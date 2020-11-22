@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, View, TextInput, Text, Switch } from 'react-native';
 
 import WelcomeScreen from './app/screens/WelcomeScreen';
 import ViewImageScreen from './app/screens/ViewImageScreen';
@@ -13,19 +13,31 @@ import Screen from './app/components/Screen';
 import Icon from './app/components/Icon';
 import ListItem from './app/components/ListItem';
 import AccountScreen from './app/screens/AccountScreen';
+import MountainsScreen from './app/screens/MountainsScreen';
+import AppTextInput from './app/components/AppTextInput';
+import AppPicker from './app/components/AppPicker';
+
+
+const categories = [
+  { label: "All Mountains", value: 1 },
+  { label: "Completed", value: 2 },
+  { label: "Not Completed", value: 3 },
+];
 
 export default function App() {
+  const [category, setCategory] = useState();
+
   return (
-    // <WelcomeScreen></WelcomeScreen>
-    // <ViewImageScreen></ViewImageScreen>
-    // <MountainDetailsScreen />
-    // <MessagesScreen />
-    // <Screen>
-    //   <ListItem 
-    //     title='My Title'
-    //     ImageComponent={<Icon name="email" />} />
-    // </Screen>
-    <AccountScreen />
+    <Screen>
+      <AppPicker
+        selectedItem={category}
+        onSelectItem={(item)=> setCategory(item)}
+        items={categories}
+        icon="apps"
+        placeholder='List View'
+      />
+      <AppTextInput icon="email" placeholder='completed' />
+    </Screen>
   );
 }
 
