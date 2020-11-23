@@ -26,7 +26,7 @@ function LoginScreen(props) {
       />
       <AppTextInput
         autoCapitalize="none"
-        autoCorrect="false"
+        autoCorrect={false}
         icon="lock"
         onChangeText={(text) => setPassword(text)}
         placeholder="password"
@@ -45,11 +45,10 @@ const styles = StyleSheet.create({
     padding: 10
   },
   logo: {
-    width: 80,
-    height: 80,
+    width: 150,
+    height: 150,
     alignSelf: "center",
     marginTop: 50,
-    marginBottom: 20,
-
+    marginBottom: 75,
   },
 })
