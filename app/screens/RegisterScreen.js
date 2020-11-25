@@ -17,7 +17,7 @@ function RegisterScreen() {
   return (
     <Screen style={styles.container}>
       <AppForm
-        initialValues={{ name: "", email: "", password: "" }}
+        initialValues={{ name: "", email: "", password: "" }}  
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
       >
