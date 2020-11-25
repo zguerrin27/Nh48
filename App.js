@@ -18,6 +18,7 @@ import AppTextInput from './app/components/AppTextInput';
 import AppPicker from './app/components/AppPicker';
 import LoginScreen from './app/screens/LoginScreen';
 import LoginScreenFormik from './app/screens/LoginScreenFormik';
+import RegisterScreen from './app/screens/RegisterScreen';
 
 
 
@@ -41,7 +42,8 @@ export default function App() {
     //   />
     //   <AppTextInput icon="email" placeholder='completed' />
     // </Screen>
-    <LoginScreenFormik />
+    // <LoginScreenFormik />
+    <RegisterScreen />
   );
 }
 
