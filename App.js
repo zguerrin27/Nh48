@@ -43,7 +43,8 @@ export default function App() {
     //   <AppTextInput icon="email" placeholder='completed' />
     // </Screen>
     // <LoginScreenFormik />
-    <RegisterScreen />
+    // <RegisterScreen />
+    <MessagesScreen />
   );
 }
 

@@ -6,7 +6,7 @@ import { StyleSheet, SafeAreaView, View, Platform, StatusBar } from 'react-nativ
 function Screen({ children, style }) {
   return (
     <SafeAreaView style={[styles.screen, style]}>
-      <View style={style}>
+      <View style={[styles.view, style]}>
         {children}
       </View>
     </SafeAreaView>
@@ -20,5 +20,8 @@ const styles = StyleSheet.create({
     // paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,   // same as below
     paddingTop: Constants.statusBarHeight,
     flex: 1,   // this makes screen component flex to entire heigth of display
+  },
+  view: {
+    flex: 1,
   }
 })
