@@ -32,19 +32,18 @@ export default function App() {
   const [category, setCategory] = useState();
 
   return (
-    // <Screen>
-    //   <AppPicker
-    //     selectedItem={category}
-    //     onSelectItem={(item)=> setCategory(item)}
-    //     items={categories}
-    //     icon="apps"
-    //     placeholder='List View'
-    //   />
-    //   <AppTextInput icon="email" placeholder='completed' />
-    // </Screen>
+    <Screen>
+      <AppPicker
+        selectedItem={category}
+        onSelectItem={(item)=> setCategory(item)}
+        items={categories}
+        icon="apps"
+        placeholder='List View'
+      />
+    </Screen>
     // <LoginScreenFormik />
     // <RegisterScreen />
-    <MessagesScreen />
+    // <MessagesScreen />
   );
 }
 
