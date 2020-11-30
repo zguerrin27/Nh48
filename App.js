@@ -21,6 +21,7 @@ import AppPicker from './app/components/AppPicker';
 import LoginScreen from './app/screens/LoginScreen';
 import LoginScreenFormik from './app/screens/LoginScreenFormik';
 import RegisterScreen from './app/screens/RegisterScreen';
+import ImageInput from './app/components/ImageInput';
 
 
 
@@ -67,9 +68,14 @@ export default function App() {
     //   />
     // </Screen>
     <Screen>
-      <Button title="Select Image" onPress={selectImage} />
-      <Image source={ { uri: imageUri } } style={{width: 200, height: 200}} />
+      <ImageInput 
+        imageUri={imageUri}
+        onChangeImage={uri => setImageUri(uri)}
+     />
     </Screen>
+    // <Screen>
+    //   <ImageInput />
+    // </Screen>
     // <MountainsScreen />
     // <MountainDetailsScreen />
     // <AccountScreen />
