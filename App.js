@@ -1,6 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
-import { StyleSheet, View, TextInput, Text, Switch } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import * as ImagePicker from 'expo-image-picker';
+import * as Permissions from 'expo-permissions';
+import { StyleSheet, View, TextInput, Text, Switch, Image, Button } from 'react-native';
 
 import WelcomeScreen from './app/screens/WelcomeScreen';
 import ViewImageScreen from './app/screens/ViewImageScreen';
@@ -30,17 +32,47 @@ const categories = [
 
 export default function App() {
   const [category, setCategory] = useState();
+  const [imageUri, setImageUri] = useState();
+
+  const requestPermission = async () => {
+    // const result = await Permissions.askAsync(Permissions.CAMERA_ROLL, Permissions.LOCATION);
+    // if(!result.granted)alert("You must grant access to photo library. ")
+
+    const result = await ImagePicker.getCameraRollPermissionsAsync();
+    if(!result.granted) alert("You must grant access to photo library. ")
+    
+  }
+
+  useEffect(() => {
+    requestPermission();
+  }, [])
+
+  const selectImage = async () => {
+    try {
+      const result = await ImagePicker.launchImageLibraryAsync();
+      if(!result.cancelled) setImageUri(result.uri)
+    } catch (error) {
+      console.log('error reading an image')
+    }
+  };
 
   return (
+    // <Screen>
+    //   <AppPicker
+    //     selectedItem={category}
+    //     onSelectItem={(item)=> setCategory(item)}
+    //     items={categories}
+    //     icon="apps"
+    //     placeholder='List View'
+    //   />
+    // </Screen>
     <Screen>
-      <AppPicker
-        selectedItem={category}
-        onSelectItem={(item)=> setCategory(item)}
-        items={categories}
-        icon="apps"
-        placeholder='List View'
-      />
+      <Button title="Select Image" onPress={selectImage} />
+      <Image source={ { uri: imageUri } } style={{width: 200, height: 200}} />
     </Screen>
+    // <MountainsScreen />
+    // <MountainDetailsScreen />
+    // <AccountScreen />
     // <LoginScreenFormik />
     // <RegisterScreen />
     // <MessagesScreen />
