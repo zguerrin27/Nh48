@@ -22,6 +22,7 @@ import LoginScreen from './app/screens/LoginScreen';
 import LoginScreenFormik from './app/screens/LoginScreenFormik';
 import RegisterScreen from './app/screens/RegisterScreen';
 import ImageInput from './app/components/ImageInput';
+import ImageInputList from './app/components/ImageInputList';
 
 
 
@@ -34,6 +35,7 @@ const categories = [
 export default function App() {
   const [category, setCategory] = useState();
   const [imageUri, setImageUri] = useState();
+  const [imageUris, setImageUris] = useState([]);
 
   const requestPermission = async () => {
     // const result = await Permissions.askAsync(Permissions.CAMERA_ROLL, Permissions.LOCATION);
@@ -57,6 +59,13 @@ export default function App() {
     }
   };
 
+  const handleAdd = (uri) => {
+    setImageUris([...imageUris, uri]);
+  }
+  const handleRemove = (uri) => {
+    setImageUris(imageUris.filter(imageUri => imageUri !== uri));
+  }
+
   return (
     // <Screen>
     //   <AppPicker
@@ -67,11 +76,18 @@ export default function App() {
     //     placeholder='List View'
     //   />
     // </Screen>
+    // <Screen>
+    //   <ImageInput 
+    //     imageUri={imageUri}
+    //     onChangeImage={uri => setImageUri(uri)}
+    //  />
+    // </Screen>
     <Screen>
-      <ImageInput 
-        imageUri={imageUri}
-        onChangeImage={uri => setImageUri(uri)}
-     />
+      <ImageInputList
+        imageUris={imageUris}
+        onAddImage={uri => handleAdd(uri)}
+        onRemoveImage={uri => handleRemove(uri)}
+      />
     </Screen>
     // <Screen>
     //   <ImageInput />
