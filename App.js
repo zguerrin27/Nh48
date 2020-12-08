@@ -39,12 +39,8 @@ export default function App() {
   const [imageUris, setImageUris] = useState([]);
 
   const requestPermission = async () => {
-    // const result = await Permissions.askAsync(Permissions.CAMERA_ROLL, Permissions.LOCATION);
-    // if(!result.granted)alert("You must grant access to photo library. ")
-
     const result = await ImagePicker.getCameraRollPermissionsAsync();
     if(!result.granted) alert("You must grant access to photo library. ")
-    
   }
 
   useEffect(() => {
