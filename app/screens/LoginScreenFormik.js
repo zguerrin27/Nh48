@@ -2,9 +2,9 @@ import React from 'react';
 import { StyleSheet, Image } from 'react-native';
 import * as Yup from 'yup';
 
-import AppForm from '../components/forms/AppForm';
+import Form from '../components/forms/Form';
 import Screen from '../components/Screen';
-import AppFormField from '../components/forms/AppFormField';
+import FormField from '../components/forms/FormField';
 import SubmitButton from '../components/forms/SubmitButton';
 
 const validationSchema = Yup.object().shape({
@@ -19,12 +19,12 @@ function LoginScreenFormik(props) {
         style={styles.logo}
         source={require('../assets/Logo.png')}
       />
-      <AppForm
+      <Form
         initialValues={{email: '', password: ''}}
         onSubmit={(values)=> console.log(values)}
         validationSchema={validationSchema}
       >
-        <AppFormField
+        <FormField
           autoCapitalize="none"
           autoCorrect={false}
           icon="email"
@@ -33,7 +33,7 @@ function LoginScreenFormik(props) {
           placeholder="email"
           textContentType="emailAddress"
         />
-        <AppFormField
+        <FormField
           autoCapitalize="none"
           autoCorrect={false}
           icon="lock"
@@ -43,7 +43,7 @@ function LoginScreenFormik(props) {
           textContentType="password"
         />
         <SubmitButton title="Login" />
-      </AppForm>
+      </Form>
     </Screen>
   );
 }

@@ -23,6 +23,7 @@ import LoginScreenFormik from './app/screens/LoginScreenFormik';
 import RegisterScreen from './app/screens/RegisterScreen';
 import ImageInput from './app/components/ImageInput';
 import ImageInputList from './app/components/ImageInputList';
+import HikeEditScreen from './app/screens/HikeEditScreen';
 
 
 
@@ -82,12 +83,18 @@ export default function App() {
     //     onChangeImage={uri => setImageUri(uri)}
     //  />
     // </Screen>
+    // <Screen>
+    //   <ImageInputList
+    //     imageUris={imageUris}
+    //     onAddImage={uri => handleAdd(uri)}
+    //     onRemoveImage={uri => handleRemove(uri)}
+    //   />
+    // </Screen>
     <Screen>
-      <ImageInputList
-        imageUris={imageUris}
-        onAddImage={uri => handleAdd(uri)}
-        onRemoveImage={uri => handleRemove(uri)}
-      />
+      {/* <MountainsScreen /> */}
+      {/* <MountainDetailsScreen /> */}
+      {/* <AccountScreen /> */}
+      <HikeEditScreen />
     </Screen>
     // <Screen>
     //   <ImageInput />
