@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
-import * as ImagePicker from 'expo-image-picker';
+// import * as ImagePicker from 'expo-image-picker';
 import * as Permissions from 'expo-permissions';
 import { StyleSheet, View, TextInput, Text, Switch, Image, Button } from 'react-native';
 
@@ -24,6 +24,10 @@ import RegisterScreen from './app/screens/RegisterScreen';
 import ImageInput from './app/components/ImageInput';
 import ImageInputList from './app/components/ImageInputList';
 import HikeEditScreen from './app/screens/HikeEditScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import AuthNavigator from './app/navigation/AuthNavigator';
+import { createStackNavigator } from  '@react-navigation/stack';
+
 
 
 
@@ -38,14 +42,14 @@ export default function App() {
   const [imageUri, setImageUri] = useState();
   const [imageUris, setImageUris] = useState([]);
 
-  const requestPermission = async () => {
-    const result = await ImagePicker.getCameraRollPermissionsAsync();
-    if(!result.granted) alert("You must grant access to photo library. ")
-  }
+  // const requestPermission = async () => {
+  //   const result = await ImagePicker.getCameraRollPermissionsAsync();
+  //   if(!result.granted) alert("You must grant access to photo library. ")
+  // }
 
-  useEffect(() => {
-    requestPermission();
-  }, [])
+  // useEffect(() => {
+  //   requestPermission();
+  // }, [])
 
   const selectImage = async () => {
     try {
@@ -64,6 +68,10 @@ export default function App() {
   }
 
   return (
+
+    <NavigationContainer>
+      <AuthNavigator />
+    </NavigationContainer>
     // <Screen>
     //   <AppPicker
     //     selectedItem={category}
@@ -86,12 +94,12 @@ export default function App() {
     //     onRemoveImage={uri => handleRemove(uri)}
     //   />
     // </Screen>
-    <Screen>
-      {/* <MountainsScreen /> */}
-      {/* <MountainDetailsScreen /> */}
-      {/* <AccountScreen /> */}
-      <HikeEditScreen />
-    </Screen>
+    // <Screen>
+    //  <MountainsScreen />
+    //  <MountainDetailsScreen />
+    //  <AccountScreen />
+    //  <HikeEditScreen />
+    //</Screen>
     // <Screen>
     //   <ImageInput />
     // </Screen>

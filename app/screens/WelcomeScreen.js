@@ -2,7 +2,7 @@ import React from 'react';
 import { ImageBackground, StyleSheet, View, Image, _Text, Text } from 'react-native';
 import AppButton from '../components/AppButton';
 
-function WelcomeScreen(props) {
+function WelcomeScreen({ navigation }) {
   return (
     <ImageBackground source={require('../assets/Main-WP.jpg')}
     style={styles.background}>
@@ -11,8 +11,8 @@ function WelcomeScreen(props) {
       <Text style={styles.tagline}>Get Out There</Text>
     </View>
     <View style={styles.buttonContainer}>
-      <AppButton title="Login" />
-      <AppButton title="Register" color="secondary" />
+      <AppButton title="Login" onPress={() => navigation.navigate("Login")} />
+      <AppButton title="Register" color="secondary" onPress={() => navigation.navigate("Register")} />
     </View>
     </ImageBackground>
   );
