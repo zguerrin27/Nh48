@@ -5,13 +5,14 @@ import AppText from '../components/AppText';
 import colors from '../config/colors';
 import ListItem from '../components/ListItem';
 
-function MountainDetailsScreen(props) {
+function MountainDetailsScreen({ route }) {
+  const mountain = route.params;
   return (
     <View>
-      <Image style={styles.image} source={require('../assets/MtWashington.jpg')} />
+      <Image style={styles.image} source={mountain.image} />
       <View style={styles.detailsContainer}>
-        <AppText style={styles.title}>Mt Washington</AppText>
-        <AppText style={styles.elevation}>6288ft</AppText>
+      <AppText style={styles.title}>{mountain.title}</AppText>
+        <AppText style={styles.elevation}>{mountain.height}</AppText>
         <View style={styles.userContainer}>
           <ListItem 
             image={require("../assets/Zach-headshot2.jpg")}

@@ -102,7 +102,7 @@ export default function App() {
     //  <MountainDetailsScreen />
     //  <AccountScreen />
     //  <HikeEditScreen />
-    //</Screen>
+    // </Screen>
     // <Screen>
     //   <ImageInput />
     // </Screen>

@@ -20,7 +20,7 @@ const mountains = [
   }
 ];
 
-function MountainsScreen(props) {
+function MountainsScreen({navigation}) {
   return (
     <Screen style={styles.screen}>
       <FlatList
@@ -31,6 +31,7 @@ function MountainsScreen(props) {
             title={item.title}
             subTitle={item.height + "ft"}
             image={item.image}
+            onPress={() => navigation.navigate("MountainDetails", item)}
           />
         )}
       />

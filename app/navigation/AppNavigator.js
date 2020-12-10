@@ -1,17 +1,17 @@
 import React from 'react';
 import { createBottomTabNavigator } from  '@react-navigation/bottom-tabs';
 
-import MountainsScreen from '../screens/MountainsScreen';
 import HikeEditScreen from '../screens/HikeEditScreen';
-import AccountScreen from '../screens/AccountScreen';
+import FeedNavigator from './FeedNavigator';
+import AccountNavigator from './AccountNavigator';
 
 const Tab = createBottomTabNavigator();
 
 const AppNavigator = () => (
   <Tab.Navigator>
-    <Tab.Screen name="All Mountains" component={MountainsScreen} />
+    <Tab.Screen name="Feed" component={FeedNavigator} />
     <Tab.Screen name="Hike Edit" component={HikeEditScreen} />
-    <Tab.Screen name="Account" component={AccountScreen} />
+    <Tab.Screen name="Account" component={AccountNavigator} />
   </Tab.Navigator>
 )
 
