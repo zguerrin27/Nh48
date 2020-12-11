@@ -4,6 +4,7 @@ import { FlatList, StyleSheet } from 'react-native';
 import Screen from '../components/Screen';
 import Card from '../components/Card';
 import colors from '../config/colors';
+import routes from '../navigation/routes';
 
 const mountains = [
   {
@@ -31,7 +32,7 @@ function MountainsScreen({navigation}) {
             title={item.title}
             subTitle={item.height + "ft"}
             image={item.image}
-            onPress={() => navigation.navigate("MountainDetails", item)}
+            onPress={() => navigation.navigate(routes.MOUNTAIN_DETAILS, item)}
           />
         )}
       />
